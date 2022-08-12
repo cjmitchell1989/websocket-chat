@@ -48,6 +48,17 @@ var appendToMakeUnique = 1;
 var httpsServer = http.createServer((request, response) => {
   console.log(new Date() + ' Received request for ' + request.url);
 
+  if (
+    request.url === '' ||
+    request.url === '/' ||
+    request.url === '/health' ||
+    request.url === 'health'
+  ) {
+    response.writeHead(200);
+    response.end(JSON.stringify({ health: 'ok' }));
+    return;
+  }
+
   fs.readFile(__dirname + request.url, function (err, data) {
     if (err) {
       response.writeHead(404);
