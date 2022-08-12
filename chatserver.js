@@ -21,10 +21,10 @@ var appendToMakeUnique = 1;
 // Load the key and certificate data to be used for our HTTPS/WSS
 // server.
 
-var httpsOptions = {
-  key: fs.readFileSync('./server.key'),
-  cert: fs.readFileSync('./server.crt'),
-};
+// var httpsOptions = {
+//   key: fs.readFileSync('./server.key'),
+//   cert: fs.readFileSync('./server.crt'),
+// };
 
 // Our HTTPS server does nothing but service WebSocket
 // connections, so every request just returns 404. Real Web
