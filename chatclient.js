@@ -25,6 +25,7 @@ function connect() {
   }
 
   serverUrl = scheme + '://' + document.location.hostname + ':6502';
+  console.log('Server URL: ', serverUrl);
 
   connection = new WebSocket(serverUrl, 'json');
   console.log('***CREATED WEBSOCKET');
